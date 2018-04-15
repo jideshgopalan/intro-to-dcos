@@ -1,7 +1,9 @@
 ---
 # using absolute path for s3 object starting from ansibles root because of
 # https://github.com/ansible/ansible-modules-core/issues/1907
-- s3: bucket={{ bucket }} object=dcos-template.json src=/vagrant/provisioning/roles/cloudformation/files/dcos-template.json mode=put
+#- s3: bucket={{ bucket }} object=dcos-template.json src=/vagrant/provisioning/roles/cloudformation/files/dcos-template.json mode=put
+- name: Copy initial files into S3 bucket
+  local_action: aws_s3 bucket={{ bucket }} object=dcos-template.json src=/home/jedi/gitlab/smack/intro-to-dcos/provisioning/roles/cloudformation/files/dcos-template.json mode=put aws_access_key={{ aws_access_key }} aws_secret_key={{ aws_secret_key }} 
 
 
 - name: launch ansible cloudformation example
@@ -18,4 +20,4 @@
     tags:
       Stack: "ansible-cloudformation"
 
-- s3: bucket={{ bucket }} mode=delete
+- aws_s3: bucket={{ bucket }} mode=delete

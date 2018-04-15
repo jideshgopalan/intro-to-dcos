@@ -4,7 +4,6 @@
   with_items:
     - python-pip
     - python-yaml
-    - openjdk-8-jre
     - docker.io
   become: yes
   become_method: sudo
@@ -14,6 +13,8 @@
   with_items:
     - pexpect
     - boto
+    - boto3
+    - botocore
     - virtualenv
   become: yes
   become_method: sudo
