@@ -1,0 +1,14 @@
+export DCOS_INTRO_AWS_REGION=us-east-1
+export DCOS_INTRO_AWS_ACCESS_KEY=AKIAIMSSP2XR7LCNIGQQ
+export DCOS_INTRO_AWS_SECRET_KEY=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
+
+
+TASK [dcos-cli : Installs dcos cli] ********************************************
+fatal: [default]: FAILED! => {"changed": true, "cmd": "bash /home/vagrant/dcos-cli/install.sh /home/vagrant/dcos-cli http://dcos-test-ElasticL-165723JFVNDN6-988076770.us-east-1.elb.amazonaws.com", "delta": "0:00:20.909670", "end": "2018-04-14 16:42:53.059959", "msg": "non-zero return code", "rc": 1, "start": "2018-04-14 16:42:32.150289", "stdout": "Installing DCOS CLI from PyPI...\r\n\r\ndcos-url is invalid. Please double check that the URL is formatted correctly and pointing at a valid cluster.", "stdout_lines": ["Installing DCOS CLI from PyPI...", "", "dcos-url is invalid. Please double check that the URL is formatted correctly and pointing at a valid cluster."]}
+	to retry, use: --limit @/home/jedi/gitlab/smack/intro-to-dcos/provisioning/site.retry
+
+PLAY RECAP *********************************************************************
+default                    : ok=12   changed=6    unreachable=0    failed=1   
+
+Ansible failed to complete successfully. Any error output should be
+visible above. Please fix these errors and try again.
